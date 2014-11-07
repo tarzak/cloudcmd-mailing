@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  h2= list.name
+
+  h3 Add a New Member
+  p You will not see the member listed until they click the link in the confirmation email.
+  form(action='/lists/'+list.id+'/subscribe/', method='post', class='form-inline')
+    div(class='input-append')
+      input(type='email', name='email', placeholder='email address')
+      input(type='submit', class='btn', value='Add Member')
+
+  h3= Members
+  table(class='table table-bordered')
+    tr
+      each header in ['Email', 'Subscribed Since', 'Member Rating']
+        th= header
+    each member in members
+      tr
+        td= member.email
+        td= member.timestamp
+        td= member.member_rating

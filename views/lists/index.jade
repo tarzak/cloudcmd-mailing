@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  h2= title
+  table(class='table table-bordered')
+    tr
+      each header in ['Name', 'Subscriber Count', 'Date Created', 'List Rating']
+        th= header
+    each list in lists
+      tr
+        td
+          a(href='/lists/'+list.id)= list.name
+        td= list.stats.member_count
+        td= list.date_created
+        td= list.list_rating

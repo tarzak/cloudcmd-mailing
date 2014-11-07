@@ -1,0 +1,35 @@
+extends ../layout
+
+block content
+  h2= "Report for: "+campaign.title
+  table(class="table table-bordered")
+    tr
+      th Hard Bounces
+      th Soft Bounces
+      th Abuse Reports
+      th Unsubscribes
+    tr 
+      td= report.hard_bounces
+      td= report.soft_bounces
+      td= report.abuse_reports
+      td= report.unsubscribes
+  table(class="table table-bordered")
+    tr 
+      th Opens
+      th Unique Opens
+      th Last Open
+    tr 
+      td= report.opens
+      td= report.unique_opens
+      td= report.last_open
+  table(class="table table-bordered")
+    tr 
+      th Clicks
+      th Unique Clicks
+      th Last Click
+      th Users who Clicked
+    tr 
+      td= report.clicks
+      td= report.unique_clicks
+      td= report.last_click
+      td= report.users_who_clicked

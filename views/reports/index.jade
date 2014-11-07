@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  h2 Select a Campaign to View Reports
+  table(class="table table-bordered")
+    tr
+      th Title
+      th Type
+      th Sent at
+      each campaign in campaigns
+        tr
+          td
+            a(href="/reports/"+campaign.id)= campaign.title
+          td= campaign.type
+          td= campaign.send_time
