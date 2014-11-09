@@ -1,1 +1,0 @@
-var mcapi = require('../node_modules/mailchimp-api/mailchimp');

@@ -1,10 +1,9 @@
 var express = require('express')
-  , routes = require('./routes')
   , lists = require('./routes/lists')
   , http = require('http')
   , path = require('path')
   , mcapi = require('./node_modules/mailchimp-api/mailchimp')
-  , location = require('./config.js');
+  , location = './html';
 
 var app = express();
 
